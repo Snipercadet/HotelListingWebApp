@@ -2,6 +2,7 @@
 
 namespace HotelListing.Models
 {
+    [Table("Hotels")]
     public class Hotel
     {
         public int Id { get; set; }
@@ -9,7 +10,6 @@ namespace HotelListing.Models
         public string Address { get; set; }
         public double Rating { get; set; }
         public int CountryId { get; set; }
-        [ForeignKey(nameof(Country))]
         public Country Country { get; set; }
     }
 }

@@ -13,14 +13,54 @@ namespace HotelListing.Data
         public DbSet<Country> Countries { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder modelbuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelbuilder);
+            base.OnModelCreating(modelBuilder);
 
-            modelbuilder.Entity<Hotel>().HasData(
+            modelBuilder.Entity<Country>().HasData(
+                new Country
+                {
+                    Id=1,
+                    Name = "Nigeria",
+                    ShortName = "NG"
+                },
+                new Country
+                {
+                    Id =2,
+                    Name = "Jamaica",
+                    ShortName = "JM"
+                },
+                new Country
+                {
+                    Id = 3,
+                    Name = "Bahamas",
+                    ShortName = "BS"
+                });
+
+            modelBuilder.Entity<Hotel>().HasData(
                 new Hotel
                 {
-
+                     Id=1,
+                     Name="Epitome Hotel and Suites",
+                     Address = "Barnawa",
+                     Rating = 4.5,
+                     CountryId = 1
+                },
+                new Hotel
+                {
+                    Id = 2,
+                    Name = "Sandals Resort and Spa",
+                    Address = "Negril",
+                    Rating = 3,
+                    CountryId = 2
+                },
+                new Hotel
+                {
+                    Id = 3,
+                    Name = "Grand Palladium",
+                    Address = "Nassau",
+                    Rating = 5,
+                    CountryId = 3
                 });
         }
     }
