@@ -1,3 +1,4 @@
+using HotelListing;
 using HotelListing.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ builder.Services.AddCors(c =>
     c.AddPolicy("AllowAll", x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 });
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Dbcon")));
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

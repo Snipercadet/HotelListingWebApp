@@ -70,3 +70,5 @@ C:\Users\SNIPER\source\repos\HotelListingWebApp\HotelListing\obj\Debug\net6.0\re
 C:\Users\SNIPER\source\repos\HotelListingWebApp\HotelListing\obj\Debug\net6.0\HotelListing.pdb
 C:\Users\SNIPER\source\repos\HotelListingWebApp\HotelListing\obj\Debug\net6.0\HotelListing.genruntimeconfig.cache
 C:\Users\SNIPER\source\repos\HotelListingWebApp\HotelListing\obj\Debug\net6.0\ref\HotelListing.dll
+C:\Users\SNIPER\source\repos\HotelListingWebApp\HotelListing\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\SNIPER\source\repos\HotelListingWebApp\HotelListing\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

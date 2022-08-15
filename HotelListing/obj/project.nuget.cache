@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "eegf040ZLAgvY8RtMasYr5E1Cn2GgKXmDmV4jlp6FgNhwsmf0JdNbM0VQvj7Ssielgbdn3FbvD6wa9lensalfg==",
+  "dgSpecHash": "T7dRDk4lq/4xnpsQXynNSNdJEtdO6AWcy6B4xO7TZY09As9mAq7d2pHp3lydO6lD0i1NiobHh4isBr+NuZaAgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\SNIPER\\source\\repos\\HotelListingWebApp\\HotelListing\\HotelListing.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\SNIPER\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\SNIPER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\SNIPER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SNIPER\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.8\\microsoft.aspnetcore.authentication.jwtbearer.6.0.8.nupkg.sha512",
-    "C:\\Users\\SNIPER\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\SNIPER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\SNIPER\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\SNIPER\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\SNIPER\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
