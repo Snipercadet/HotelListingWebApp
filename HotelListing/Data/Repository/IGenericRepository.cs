@@ -8,7 +8,7 @@ namespace HotelListing.Data.Repository
             List<string>? includes = null, 
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy=null);
 
-        Task<T> GetById(Expression<Func<T, bool>>? expression= null, List<string> includes= null);
+        Task<T> Get(Expression<Func<T, bool>>? expression= null, List<string> includes= null);
         Task Add(T entity);
         Task AddRange(T entities);
         Task Delete(int Id);

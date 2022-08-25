@@ -10,7 +10,7 @@ namespace HotelListing.Data.Repository
         public GenericRepository(AppDbContext context)
         {
             _context = context;
-            _db = context.Set<T>();
+            _db = _context.Set<T>();
         }
         public async Task Add(T entity)
         {
@@ -55,7 +55,7 @@ namespace HotelListing.Data.Repository
             return await query.ToListAsync();
         }
 
-        public async Task<T> GetById(Expression<Func<T, bool>>? expression = null, List<string> includes = null)
+        public async Task<T> Get(Expression<Func<T, bool>>? expression = null, List<string> includes = null)
         {
             IQueryable<T> query = _db;
             if(includes != null)

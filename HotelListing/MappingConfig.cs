@@ -4,14 +4,27 @@ using HotelListing.Models.Dtos;
 
 namespace HotelListing
 {
-    public class MappingConfig:Profile
+    public class MappingConfig /*:Profile*/
     {
-        public MappingConfig()
+        //public MappingConfig()
+        //{
+        //    CreateMap<Country, CountryDTO>().ReverseMap();
+        //    CreateMap<Country, CreateCountryDTO>().ReverseMap();
+        //    CreateMap<Hotel, HotelDTO>().ReverseMap();
+        //    CreateMap<Hotel, HotelDTO>().ReverseMap();
+        //}
+        public static MapperConfiguration RegisterMaps()
         {
-            CreateMap<Country, CountryDTO>().ReverseMap();
-            CreateMap<Country, CreateCountryDTO>().ReverseMap();
-            CreateMap<Hotel, HotelDTO>().ReverseMap();
-            CreateMap<Hotel, HotelDTO>().ReverseMap();
+            var mappingConfig = new MapperConfiguration(x =>
+            {
+                x.CreateMap<Country, CountryDTO>().ReverseMap();
+                x.CreateMap<Country, CreateCountryDTO>().ReverseMap();
+                x.CreateMap<Hotel, HotelDTO>().ReverseMap();
+                x.CreateMap<Hotel, HotelDTO>().ReverseMap();
+            });
+
+            return mappingConfig;
         }
+
     }
 }
