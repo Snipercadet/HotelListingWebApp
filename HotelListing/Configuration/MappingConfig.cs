@@ -2,7 +2,7 @@
 using HotelListing.Models;
 using HotelListing.Models.Dtos;
 
-namespace HotelListing
+namespace HotelListing.Configuration
 {
     public class MappingConfig /*:Profile*/
     {
@@ -20,7 +20,8 @@ namespace HotelListing
                 x.CreateMap<Country, CountryDTO>().ReverseMap();
                 x.CreateMap<Country, CreateCountryDTO>().ReverseMap();
                 x.CreateMap<Hotel, HotelDTO>().ReverseMap();
-                x.CreateMap<Hotel, HotelDTO>().ReverseMap();
+                x.CreateMap<Hotel, CreateHotelDTO>().ReverseMap();
+                x.CreateMap<ApiUser, UserDTO>().ReverseMap();
             });
 
             return mappingConfig;

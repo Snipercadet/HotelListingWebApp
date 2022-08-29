@@ -55,7 +55,7 @@ namespace HotelListing.Data.Repository
             return await query.ToListAsync();
         }
 
-        public async Task<T> Get(Expression<Func<T, bool>>? expression = null, List<string> includes = null)
+        public async Task<T> Get(Expression<Func<T, bool>>? expression = null, List<string>? includes = null)
         {
             IQueryable<T> query = _db;
             if(includes != null)

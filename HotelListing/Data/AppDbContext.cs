@@ -1,9 +1,11 @@
-﻿using HotelListing.Models;
+﻿using HotelListing.Configuration.entity;
+using HotelListing.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelListing.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApiUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -17,51 +19,10 @@ namespace HotelListing.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Country>().HasData(
-                new Country
-                {
-                    Id=1,
-                    Name = "Nigeria",
-                    ShortName = "NG"
-                },
-                new Country
-                {
-                    Id =2,
-                    Name = "Jamaica",
-                    ShortName = "JM"
-                },
-                new Country
-                {
-                    Id = 3,
-                    Name = "Bahamas",
-                    ShortName = "BS"
-                });
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
+            modelBuilder.ApplyConfiguration(new HotelConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
 
-            modelBuilder.Entity<Hotel>().HasData(
-                new Hotel
-                {
-                     Id=1,
-                     Name="Epitome Hotel and Suites",
-                     Address = "Barnawa",
-                     Rating = 4.5,
-                     CountryId = 1
-                },
-                new Hotel
-                {
-                    Id = 2,
-                    Name = "Sandals Resort and Spa",
-                    Address = "Negril",
-                    Rating = 3,
-                    CountryId = 2
-                },
-                new Hotel
-                {
-                    Id = 3,
-                    Name = "Grand Palladium",
-                    Address = "Nassau",
-                    Rating = 5,
-                    CountryId = 3
-                });
         }
     }
 }
