@@ -18,15 +18,15 @@ namespace HotelListing
             builder.AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
         }
 
-        //public static void ConfigureCors(this IServiceCollection services)
-        //{
-        //    var builder = services.AddCors(c =>
-        //    {
-        //        c.AddPolicy("AllowAll", x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-        //    });
-        //}
+        public static void ConfigureCors(this IServiceCollection services)
+        {
+            var builder = services.AddCors(c =>
+            {
+                c.AddPolicy("AllowAll", x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            });
+        }
 
-       
+
 
         public static void ConfigureJWTB(this IServiceCollection services, IConfiguration Configuration)
         {
