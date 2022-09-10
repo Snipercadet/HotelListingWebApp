@@ -22,6 +22,7 @@ namespace HotelListing.Configuration
                 x.CreateMap<Hotel, HotelDTO>().ReverseMap();
                 x.CreateMap<Hotel, CreateHotelDTO>().ReverseMap();
                 x.CreateMap<ApiUser, UserDTO>().ReverseMap();
+                x.CreateMap<ApiUser, TokenDTO>().ReverseMap();
             });
 
             return mappingConfig;
