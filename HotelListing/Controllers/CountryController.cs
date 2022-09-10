@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace HotelListing.Controllers
 {
-    [Authorize]
+   
     [Route("api/[controller]")]
     [ApiController]
     public class CountryController : ControllerBase
@@ -26,6 +26,7 @@ namespace HotelListing.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Authorize]
         public async Task<IActionResult> GetCountries()
         {
             try
