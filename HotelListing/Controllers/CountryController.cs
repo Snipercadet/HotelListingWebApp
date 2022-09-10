@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using HotelListing.Data.Repository;
 using HotelListing.Models.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace HotelListing.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CountryController : ControllerBase
