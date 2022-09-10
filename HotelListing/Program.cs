@@ -51,7 +51,7 @@ builder.Services.AddDbContext<AppDbContext>(o => o.UseNpgsql(builder.Configurati
 
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
-builder.Services.AddAutoMapper(/*typeof(MappingConfig)*/AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddControllers().AddNewtonsoftJson(ox=>ox.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<TokenService>();
