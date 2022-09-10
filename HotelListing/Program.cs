@@ -26,7 +26,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }
     else
     {
-        connStr = builder.Configuration.GetConnectionString("LiveConnection");
+        connStr = builder.Configuration.GetConnectionString("DATABASE_URL");
 
        
     }
