@@ -12,39 +12,27 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Dbcon")));
-builder.Services.AddDbContext<AppDbContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("Dbcon")));
+//builder.Services.AddDbContext<AppDbContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("Dbcon")));
 
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//{
-//    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-//    string connStr;
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    string connStr;
 
-//    if (env == "Development")
-//    {
-//        connStr = builder.Configuration.GetConnectionString("Dbcon");
-//    }
-//    else
-//    {
-//        connStr = builder.Configuration.GetConnectionString("LiveConnection");
+    if (env == "Development")
+    {
+        connStr = builder.Configuration.GetConnectionString("Dbcon");
+    }
+    else
+    {
+        connStr = builder.Configuration.GetConnectionString("LiveConnection");
 
-//        // Use connection string provided at runtime by Heroku.
-//        //var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+       
+    }
 
-//        //connUrl = connUrl.Replace("postgres://", string.Empty);
-//        //var userPassSide = connUrl.Split("@")[0];
-//        //var hostSide = connUrl.Split("@")[1];
-
-//        //var user = userPassSide.Split(":")[0];
-//        //var password = "fdf12756a52bc5a34a212c7ad9453a0b9b8ebb4fabccfd1720e3643fffd389e9";
-//        //var host = hostSide.Split("/")[0];
-//        //var database = hostSide.Split("/")[1].Split("?")[0];
-
-//        //connStr = $"Server=ec2-54-87-99-12.compute-1.amazonaws.com;Database={database};User ID={user};Password={password};Port=5432;TrustServerCertificate=true;sslmode=Require";
-//    }
-
-//    options.UseNpgsql(connStr)
-//    ;
-//});
+    options.UseNpgsql(connStr)
+    ;
+});
 //builder.Services.AddIdentityCore<ApiUser>()
 //    .AddRoles<IdentityRole>()
 //    .AddDefaultTokenProviders();
