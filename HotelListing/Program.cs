@@ -26,7 +26,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }
     else
     {
-        connStr = builder.Configuration.GetConnectionString("DATABASE_URL");
+        connStr = builder.Configuration.GetConnectionString("LiveConnection");
 
        
     }
@@ -84,7 +84,7 @@ builder.Services.ConfigureJWTB(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsProduction())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
